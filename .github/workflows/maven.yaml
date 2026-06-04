@@ -27,7 +27,8 @@ jobs:
         run: docker build -t myapp:latest .
 
       - name: docker push
-        run: docker push deepxkrana/myapp:latest
+        run: docker push ${{ secrets.DOCKER_USERNAME }}/myapp:latest
+
       - name: upload jar artifact
         uses: actions/upload-artifact@v4
         with:
