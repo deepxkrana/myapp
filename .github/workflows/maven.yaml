@@ -16,3 +16,9 @@ jobs:
 
       - name: Build Maven
         run: mvn package
+
+      - name: upload jar artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: myapp-jar
+          path: target/*.jar
